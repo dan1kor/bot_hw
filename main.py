@@ -424,16 +424,8 @@ def check_deadline_id(dd_id, user_name):
     return dd_id
 
 
-async def send_deadlin():
-    await bot.send_message(chat_id=969892435, text='ебаныййййййййййй в рооооооот нахуй блядины ебанные')
-
 def check_deadlines_daily():
     global USER_NAME
-    if USER_NAME:
-        send_deadlin()
-    else:
-        print('пока пусто ебана')
-
     # try:
     #     print('я в чек дедлайнс')
     #     if USER_NAME:
@@ -460,7 +452,7 @@ def check_deadlines_daily():
 
 async def schedule_deadline():
     global USER_NAME
-    aioschedule.every().day.at('12:31').do(check_deadlines_daily)
+    aioschedule.every().day.at('09:00').do(check_deadlines_daily)
     while True:
         await aioschedule.run_pending()
         await asyncio.sleep(10)
